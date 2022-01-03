@@ -32,5 +32,6 @@
   <!--
   Guardar Mapa (Guarda an localização onde o comando é corrido)
   rosrun map_server map_saver -f teste1
+  Balblblbla
   -->
 </launch>
