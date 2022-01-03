@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="x_pos" default="6.0"/>
+  <arg name="y_pos" default="1.7"/>
+  <arg name="z_pos" default="0.05"/>
+  <arg name="joycom" default="false" doc="use joycom"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find museum_guide)/world/rcp_world3.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"  args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+
+  <group if="$(arg joycom)">
+    <node name="joy_node" pkg="joy" type="joy_node"  />
+    <node name="teleop_node" pkg="teleop_twist_joy" type="teleop_node"  />
+  </group>
+
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" unless="$(arg joycom)" />
+  
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" args="scan:=scan" />
+
+  <!--
+  Guardar Mapa (Guarda an localização onde o comando é corrido)
+  rosrun map_server map_saver -f teste1
+  -->
+</launch>

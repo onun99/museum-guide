@@ -1,0 +1,18 @@
+    material uc_cr_qr_wall_L6/Image
+    {
+      technique
+      {
+        pass
+        {
+          ambient 1. 1. 1. 1.0
+          diffuse 1.0 1.0 1.0 1.0
+          specular 0.03 0.03 0.03 1.0
+
+          texture_unit
+          {
+            texture qr_6.png
+            
+          }
+        }
+      }
+    }

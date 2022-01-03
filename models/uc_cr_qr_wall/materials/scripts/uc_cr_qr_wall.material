@@ -1,0 +1,18 @@
+    material uc_cr_qr_wall/Image
+    {
+      technique
+      {
+        pass
+        {
+          ambient 1. 1. 1. 1.0
+          diffuse 1.0 1.0 1.0 1.0
+          specular 0.03 0.03 0.03 1.0
+
+          texture_unit
+          {
+            texture home_sweet_home.png
+            
+          }
+        }
+      }
+    }
