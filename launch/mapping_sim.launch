@@ -28,10 +28,7 @@
   <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" unless="$(arg joycon)" />
   
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" args="scan:=scan" >
-    <param name="xmin" value="-50" />
-    <param name="xmax" value="50" />
-    <param name="ymin" value="-50" />
-    <param name="ymax" value="50" />
+    <rosparam file="$(find museum_guide)/param/mapping_sim_params.yaml" command="load" />
   </node>
 
   <!--
