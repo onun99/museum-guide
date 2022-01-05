@@ -27,7 +27,7 @@
 
   <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" unless="$(arg joycon)" />
   
-  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" args="scan:=scan" />
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" args="scan:=scan xmin:=-50 ymin:=-50 xmax:=50 ymax:=50" />
 
   <!--
   Guardar Mapa (Guarda an localização onde o comando é corrido)
