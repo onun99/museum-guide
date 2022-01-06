@@ -1,5 +1,5 @@
 # Logistics Robot
-Made for Cognitive Robotics by João Sousa and Nuno Marques
+Made for Cognitive Robotics 2021/2022 by João Sousa and Nuno Marques @ UC
 
 ## How to connect the computer to the robot and run ROS
 NOTE: Make sure to change the hosts file (/etc/hosts) to contain the correct IP address of orangepipcplus, by adding the line `XXX.XXX.XXX.XXX orangepipcplus`.
