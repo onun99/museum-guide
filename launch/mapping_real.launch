@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="joycon" default="false" doc="use joycon"/>
+
+  
+  <!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" /> -->
+
+  <group if="$(arg joycon)">
+    <node name="joy_node" pkg="joy" type="joy_node"  />
+    <node name="teleop_node" pkg="teleop_twist_joy" type="teleop_node"  />
+  </group>
+
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" unless="$(arg joycon)" />
+  
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" args="scan:=scan" >
+    <rosparam file="$(find museum_guide)/param/mapping_sim_params.yaml" command="load" />
+  </node>
+
+  <!--
+  Guardar Mapa (Guarda an localização onde o comando é corrido)
+  rosrun map_server map_saver -f teste1
+  -->
+</launch>
