@@ -46,5 +46,3 @@ NOTE: Make sure to change the hosts file (/etc/hosts) to contain the correct IP 
 2. Open new terminal and run `$ roslaunch museum_guide mapping_real.launch joycon:=true` (leave out the joycon part to use the keyboard instead).
 3. Move the robot around. The deadman switch is X for a DualShock 4.
 4. Open new terminal and run `$ rosrun map_server map_saver -f map_name`. The map will be saved in the current directory.
-
-[] brush
