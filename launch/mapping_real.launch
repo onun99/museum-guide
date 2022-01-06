@@ -2,13 +2,16 @@
 <launch>
   <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="joycon" default="false" doc="use joycon"/>
+  <arg name="x_pos" default="6.0"/>
+  <arg name="y_pos" default="1.7"/>
+  <arg name="z_pos" default="0.05"/>
 
   
   <!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" /> -->
 
   <group if="$(arg joycon)">
     <node name="joy_node" pkg="joy" type="joy_node">
-      <param name = "autorepeat_rate" value = 6/>
+      <param name = "autorepeat_rate" value = "6"/>
     </node>
     <node name="teleop_node" pkg="teleop_twist_joy" type="teleop_node"  />
   </group>
@@ -16,7 +19,7 @@
   <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" unless="$(arg joycon)" />
   
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" args="scan:=scan" >
-    <rosparam file="$(find museum_guide)/param/mapping_sim_params.yaml" command="load" />
+    <rosparam file="$(find museum_guide)/param/Real/mapping_params_real.yaml" command="load" />
   </node>
 
   <!--
