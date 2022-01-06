@@ -18,3 +18,8 @@ Made for Cognitive Robotics by João Sousa and Nuno Marques
 2. Open new terminal and run `$ roslaunch museum_guide mapping_sim.launch joycon:=true` (leave out the joycon part to use the keyboard instead)
 3. Move the robot around in Gazebo with the joystick. The deadman switch is X for a DualShock 4
 4. Open new terminal and run `$ rosrun map_server map_saver -f map_name`. The map will be saved in the current directory.
+
+
+group01@10.42.0.1
+export ROS_MASTER_URI=http://10.42.0.1:11311
+
