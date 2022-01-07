@@ -19,7 +19,7 @@
   <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" unless="$(arg joycon)" />
   
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" args="scan:=scan" >
-    <rosparam file="$(find museum_guide)/param/Real/mapping_params_real.yaml" command="load" />
+    <rosparam file="$(find museum_guide)/param/real/mapping_params.yaml" command="load" />
   </node>
 
   <!--

@@ -48,7 +48,7 @@
  <include file="$(find museum_guide)/launch/move_base_sim.launch"/>
 
   <!-- RVIZ -->
-  <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find museum_guide)/rvizConfig/navSimRVIZ.rviz"/>
+  <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find museum_guide)/rviz/sim.rviz"/>
 
 
   <!--
