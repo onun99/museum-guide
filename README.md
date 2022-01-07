@@ -1,6 +1,10 @@
 # Logistics Robot
 Made for Cognitive Robotics 2021/2022 by João Sousa and Nuno Marques, Masters Degree in Robotics, A.I. and Control, DEEC @ UC
 
+## Index
+1. How to connect the computer to the robot and run ROS
+   1. asdf
+
 ## How to connect the computer to the robot and run ROS
 NOTE: Make sure to change the hosts file (/etc/hosts) to contain the correct IP address of orangepipcplus, by adding the line `XXX.XXX.XXX.XXX orangepipcplus`.
 
@@ -46,3 +50,21 @@ NOTE: Make sure to change the hosts file (/etc/hosts) to contain the correct IP 
 2. Open new terminal and run `$ roslaunch museum_guide mapping_real.launch joycon:=true` (leave out the joycon part to use the keyboard instead).
 3. Move the robot around. The deadman switch is X for a DualShock 4.
 4. Open new terminal and run `$ rosrun map_server map_saver -f map_name`. The map will be saved in the current directory.
+
+# Table of contents
+1. [Introduction](#introduction)
+2. [Some paragraph](#paragraph1)
+    1. [Sub paragraph](#subparagraph1)
+3. [Another paragraph](#paragraph2)
+
+## This is the introduction <a name="introduction"></a>
+Some introduction text, formatted in heading 2 style
+
+## Some paragraph <a name="paragraph1"></a>
+The first paragraph text
+
+### Sub paragraph <a name="subparagraph1"></a>
+This is a sub paragraph, formatted in heading 3 style
+
+## Another paragraph <a name="paragraph2"></a>
+The second paragraph text
