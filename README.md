@@ -1,16 +1,13 @@
-# Logistics Robot
 Made for Cognitive Robotics 2021/2022 by João Sousa and Nuno Marques, Masters Degree in Robotics, A.I. and Control, DEEC @ UC
 
-# Table of contents
-- [Logistics Robot](#logistics-robot)
-- [Table of contents](#table-of-contents)
-  - [How to connect the computer to the robot and run ROS<a name = "connect_pc_to_robot"></a>](#how-to-connect-the-computer-to-the-robot-and-run-ros)
-    - [Wired connection<a name = "wired_connection"></a>](#wired-connection)
-    - [Wireless connection<a name = "wireless_connection"></a>](#wireless-connection)
-    - [How to check IP address of the robot<a name = "check_ip"></a>](#how-to-check-ip-address-of-the-robot)
-  - [How to save a map<a name = "save_map"></a>](#how-to-save-a-map)
-    - [In simulation<a name = "save_map_sim"></a>](#in-simulation)
-    - [In the real world](#in-the-real-world)
+## Table of contents<!-- omit in toc -->
+- [How to connect the computer to the robot and run ROS<a name = "connect_pc_to_robot"></a>](#how-to-connect-the-computer-to-the-robot-and-run-ros)
+  - [Wired connection<a name = "wired_connection"></a>](#wired-connection)
+  - [Wireless connection<a name = "wireless_connection"></a>](#wireless-connection)
+  - [How to check IP address of the robot<a name = "check_ip"></a>](#how-to-check-ip-address-of-the-robot)
+- [How to save a map<a name = "save_map"></a>](#how-to-save-a-map)
+  - [In simulation<a name = "save_map_sim"></a>](#in-simulation)
+  - [In the real world](#in-the-real-world)
 
 ## How to connect the computer to the robot and run ROS<a name = "connect_pc_to_robot"></a>
 NOTE: Make sure to change the hosts file (/etc/hosts) to contain the correct IP address of orangepipcplus, by adding the line `XXX.XXX.XXX.XXX orangepipcplus`.
