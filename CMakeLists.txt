@@ -25,7 +25,10 @@ include_directories(
 )
 
 add_executable(explorer_node src/explorer_node.cpp)
+add_executable(simple_goals_xpto src/simple_goals_xpto.cpp)
 ####add_executable(guide_node src/guide_node.cpp)
+
+
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -37,6 +40,8 @@ target_link_libraries(explorer_node
   ${catkin_LIBRARIES}
   ${OpenCV_LIBS}
 )
+
+target_link_libraries(simple_goals_xpto ${catkin_LIBRARIES})
 
 ####target_link_libraries(guide_node
 ####  ${catkin_LIBRARIES}
