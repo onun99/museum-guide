@@ -9,7 +9,7 @@
 
 
   <!-- Map Server -->
-  <node pkg="map_server" type="map_server" name="map_server" args="$(find museum_guide)/maps/real_map4.yaml"/>
+  <node pkg="map_server" type="map_server" name="map_server" args="$(find museum_guide)/maps/mapa_real2.yaml" output="screen"/>
 
   <!-- Teleop
     
@@ -23,9 +23,9 @@
 
   <!-- AMCL -->
   <include file="$(find museum_guide)/launch/amcl.launch">
-    <arg name="initial_pose_x" default="0"/>
-    <arg name="initial_pose_y" default="0"/>
-    <arg name="initial_pose_a" default="1.5"/>
+    <arg name="initial_pose_x" default="0.6"/>
+    <arg name="initial_pose_y" default="1.7"/>
+    <arg name="initial_pose_a" default="2"/>
   </include>
 
 
@@ -35,6 +35,8 @@
   <!-- RVIZ -->
   <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find museum_guide)/rviz/real.rviz"/>
 
+  <!-- RQT RECONFIGURE-->
+  <!-- <node pkg="rqt_reconfigure" name="rqt_reconfigure" type="rqt_reconfigure"/> -->
 
   <!--
   Guardar Mapa (Guarda an localização onde o comando é corrido)
