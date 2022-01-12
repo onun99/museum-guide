@@ -2,9 +2,9 @@
 <launch>
   <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="joycon" default="false" doc="use joycon"/>
-  <arg name="x_pos" default="6.0"/>
-  <arg name="y_pos" default="1.7"/>
-  <arg name="z_pos" default="0.05"/>
+  <arg name="x_pos" default="0"/>
+  <arg name="y_pos" default="0"/>
+  <arg name="z_pos" default="0"/>
 
   
   <!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" /> -->
