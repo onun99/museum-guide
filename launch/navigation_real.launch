@@ -1,25 +1,16 @@
 <?xml version="1.0"?>
 <launch>
   <!-- Argumentos -->
-  <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
+  <!-- <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="x_pos" default="0"/>
   <arg name="y_pos" default="0"/>
   <arg name="z_pos" default="0"/>
-  <arg name="joycon" default="false" doc="use joycon"/>
+  <arg name="joycon" default="false" doc="use joycon"/> -->
 
 
   <!-- Map Server -->
   <node pkg="map_server" type="map_server" name="map_server" args="$(find museum_guide)/maps/mapa_real2.yaml" output="screen"/>
 
-  <!-- Teleop
-    
-  <group if="$(arg joycon)">
-    <node name="joy_node" pkg="joy" type="joy_node"  />
-    <node name="teleop_node" pkg="teleop_twist_joy" type="teleop_node"  />
-  </group>
-
-  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" unless="$(arg joycon)" />
-  -->
 
   <!-- AMCL -->
   <include file="$(find museum_guide)/launch/amcl.launch">
@@ -34,9 +25,6 @@
 
   <!-- RVIZ -->
   <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find museum_guide)/rviz/real.rviz"/>
-
-  <!-- RQT RECONFIGURE-->
-  <!-- <node pkg="rqt_reconfigure" name="rqt_reconfigure" type="rqt_reconfigure"/> -->
 
   <!--
   Guardar Mapa (Guarda an localização onde o comando é corrido)

@@ -8,11 +8,10 @@
   <!-- move_base -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
-    <!-- <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" /> -->
 
     <rosparam file="$(find museum_guide)/param/real/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find museum_guide)/param/real/costmap_common_params.yaml" command="load" ns="local_costmap" />
-     <rosparam file="$(find museum_guide)/param/real/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find museum_guide)/param/real/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find museum_guide)/param/real/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find museum_guide)/param/real/move_base_params.yaml" command="load" />
     <rosparam file="$(find museum_guide)/param/real/dwa_local_planner_params.yaml" command="load" /> 
@@ -21,12 +20,6 @@
     <remap from="odom" to="$(arg odom_topic)"/>
 
     <param name="DWAPlannerROS/min_vel_x" value="0.01" if="$(arg move_forward_only)" />
-    <!-- <param name="TrajectoryPlannerROS/min_vel_x" value="0.01" if="$(arg move_forward_only)" />
-    <param name="TrajectoryPlannerROS/dwa" value="false" />
-    <param name="TrajectoryPlannerROS/acc_lim_x" value="0.6" />
-    <param name="TrajectoryPlannerROS/acc_lim_y" value="0.6" />
-    <param name="TrajectoryPlannerROS/max_vel_x" value="0.2" />
-    <param name="TrajectoryPlannerROS/acc_lim_theta" value="1" />
-    <param name="TrajectoryPlannerROS/min_in_place_vel_theta" value="0.2" /> -->
+
   </node>
 </launch>
