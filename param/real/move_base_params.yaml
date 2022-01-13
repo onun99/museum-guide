@@ -7,3 +7,11 @@ planner_frequency: 5.0
 oscillation_timeout: 10.0
 oscillation_distance: 0.2
 
+recovery_behaviors:
+  - name: 'rotate_recovery'
+    type: 'rotate_recovery/RotateRecovery'
+  - name: 'costmap_reset_conservative'
+    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+costmap_reset_conservative:
+  reset_distance: 1.5
+  layer_names: ["obstacle_layer"]

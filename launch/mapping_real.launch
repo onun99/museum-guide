@@ -22,6 +22,9 @@
     <rosparam file="$(find museum_guide)/param/real/mapping_params.yaml" command="load" />
   </node>
 
+  <!-- RVIZ -->
+  <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find museum_guide)/rviz/mapping_real.rviz"/>
+
   <!--
   Guardar Mapa (Guarda an localização onde o comando é corrido)
   rosrun map_server map_saver -f teste1
