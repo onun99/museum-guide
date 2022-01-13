@@ -83,11 +83,10 @@
   </node>
 
   <!-- goals_node -->
-  <node pkg="museum_guide" type="goals_node.py" name="movebase_client_py" output="screen" />
+  <node pkg="museum_guide" type="goals_node_sim.py" name="movebase_client_py" output="screen" />
 
   <!--
   Guardar Mapa (Guarda an localização onde o comando é corrido)
   rosrun map_server map_saver -f teste1
-  Balblblbla
   -->
 </launch>
